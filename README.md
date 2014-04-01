@@ -3,8 +3,8 @@ BitcoinTicker
 
 Android Bitcoin Ticker
 
-Christopher Lee\n
-4/1/2014\n
+Christopher Lee
+4/1/2014
 christopherlee2012@gmail.com
 
 
