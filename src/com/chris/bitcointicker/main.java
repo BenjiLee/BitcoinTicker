@@ -8,12 +8,15 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
 public class main extends Activity{
 	
-	TextView showResult;
+	ImageButton image;
+	TextView tickerText;
+	
 	private GetPrice blockchain = new GetPrice();
 	DownloadTicker usd = new DownloadTicker();  
 	
@@ -21,7 +24,8 @@ public class main extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		showResult = (TextView) findViewById(R.id.btnTicker);
+		image = (ImageButton) findViewById(R.id.btnTicker);
+		tickerText = (TextView) findViewById(R.id.btnTickerText);
 		usd.execute(new String[] {""});
 		
 	}
@@ -45,7 +49,7 @@ public class main extends Activity{
 		}
 		@Override
 		protected void onPostExecute(String result){
-			showResult.setText(result);
+			tickerText.setText(result);
 		}
 		
 	}
