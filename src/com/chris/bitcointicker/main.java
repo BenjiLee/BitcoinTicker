@@ -7,6 +7,7 @@ import com.chris.price.GetPrice;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -20,9 +21,14 @@ public class main extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		showResult = (TextView) findViewById(R.id.textView1);
+		showResult = (TextView) findViewById(R.id.btnTicker);
 		usd.execute(new String[] {""});
 		
+	}
+	
+	public void btnUpdateTicker(View v) {
+		DownloadTicker usd = new DownloadTicker(); 
+		usd.execute(new String[] {""});
 	}
 	
 	private class DownloadTicker extends AsyncTask<String, Void, String> {
