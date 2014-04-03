@@ -1,34 +1,46 @@
 package com.chris.bitcointicker;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import java.io.IOException;
 
-import com.chris.bitcointicker.R;
+import com.chris.price.GetPrice;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.View;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.widget.TextView;
 
 
 public class main extends Activity{
 	
 	TextView showResult;
+	private GetPrice blockchain = new GetPrice();
+	DownloadTicker usd = new DownloadTicker();  
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		try{
-			Document doc = Jsoup.connect("https://bitcoinity.org/markets/").get();
-			showResult = (TextView) findViewById(R.id.textView1);
-			Elements divs = doc.select("div#last_prices");
-			showResult.setText(divs.text());
+		showResult = (TextView) findViewById(R.id.textView1);
+		usd.execute(new String[] {""});
+		
+	}
+	
+	private class DownloadTicker extends AsyncTask<String, Void, String> {
+
+		@Override
+		protected String doInBackground(String... arg0) {
+			try {
+				return blockchain.GetPrice();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return "err";
+			}
 		}
-		catch (Exception e){
-			System.out.println(e);		
+		@Override
+		protected void onPostExecute(String result){
+			showResult.setText(result);
 		}
+		
 	}
 }

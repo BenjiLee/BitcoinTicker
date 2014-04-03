@@ -1,9 +1,10 @@
-package com.chris.bitcointicker;
+package com.chris.test;
 
 import java.io.IOException;
-import com.chris.price.GetPrice;
 
 import junit.framework.TestCase;
+
+import com.chris.price.GetPrice;
 
 public class test extends TestCase {	
 	
