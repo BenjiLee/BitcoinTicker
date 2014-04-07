@@ -2,5 +2,6 @@
 
     <string name="app_name">BitcoinTicker</string>
     <color name="grey">#d3d3d3</color>
+    <string name="widget_text">"Meoooowwww"</string>
 
 </resources>
