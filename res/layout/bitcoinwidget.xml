@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" 
-    android:background="@color/grey"
-    android:layout_gravity="center">
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    android:background="@drawable/rounded_bg"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/widget_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/widget_text"
-        android:layout_gravity="center_horizontal|center"
-        android:layout_marginTop="5dip"
-        android:padding="10dip"
-        android:textColor="@android:color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <ImageButton
+                android:id="@+id/WidgetBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:paddingTop="3dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_launcher" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/WidgetTextViewTicker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:gravity="center" >
+
+            <requestFocus />
+        </TextView>
+
+    </LinearLayout>
 
 </LinearLayout>

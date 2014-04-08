@@ -25,7 +25,7 @@ public class main extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		image = (ImageButton) findViewById(R.id.btnTicker);
-		tickerText = (TextView) findViewById(R.id.btnTickerText);
+		tickerText = (TextView) findViewById(R.id.TextViewTicker);
 		usd.execute(new String[] {""});
 		
 	}
@@ -35,7 +35,7 @@ public class main extends Activity{
 		usd.execute(new String[] {""});
 	}
 	
-	private class DownloadTicker extends AsyncTask<String, Void, String> {
+	public class DownloadTicker extends AsyncTask<String, Void, String> {
 
 		@Override
 		protected String doInBackground(String... arg0) {
