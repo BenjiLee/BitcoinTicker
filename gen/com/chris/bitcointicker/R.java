@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int black=0x7f070001;
         public static final int grey=0x7f070000;
     }
     public static final class dimen {
@@ -26,7 +27,7 @@ public final class R {
         public static final int TextViewCurrencyRight=0x7f090006;
         public static final int TextViewTicker=0x7f090005;
         public static final int WidgetBtn=0x7f090000;
-        public static final int WidgetTextViewTicker=0x7f090001;
+        public static final int WidgetTextView=0x7f090001;
         public static final int btnTicker=0x7f090003;
     }
     public static final class layout {

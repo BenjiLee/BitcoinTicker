@@ -28,6 +28,7 @@
         <receiver android:name="BitcoinWidget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.chris.bitcointicker.BitcoinWidget.ACTION_WIDGET_RECEIVER"/>
             </intent-filter>
 
             <meta-data

@@ -28,11 +28,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/WidgetTextViewTicker"
+            android:id="@+id/WidgetTextView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            android:gravity="center" >
+            android:gravity="center"
+            android:textColor="@color/black" >
 
             <requestFocus />
         </TextView>
