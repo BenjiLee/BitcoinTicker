@@ -31,7 +31,8 @@ public class BitcoinWidget extends AppWidgetProvider {
 
 		RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
 				R.layout.bitcoinwidget);
-		remoteViews.setTextViewText(R.id.WidgetTextView, price);
+		DownloadTicker usd = new DownloadTicker(remoteViews, context);
+		usd.execute(new String[] { "" });
 
 		Intent active = new Intent(context, BitcoinWidget.class);
 		active.setAction(updateTicker);
