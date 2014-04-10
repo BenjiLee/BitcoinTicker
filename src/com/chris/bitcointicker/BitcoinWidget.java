@@ -19,7 +19,7 @@ public class BitcoinWidget extends AppWidgetProvider {
 
 	TextView widgetText;
 	RemoteViews remoteViews;
-	String price;
+	String price = "---";
 	DownloadTicker usd;
 
 	private GetPrice blockchain = new GetPrice();
